@@ -1,0 +1,635 @@
+
+html, *{
+    margin:0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ul {
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+body{
+    background-color: aliceblue;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    font-family: "Handlee", cursive, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header{
+    width: 100%;
+    background-image: linear-gradient(180deg, rgb(193, 193, 193), transparent);
+    background-color: lightblue;
+    text-align: center;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: fixed;
+    top: 0;
+    animation: header-movein 1s ease 0s 1 forwards;
+    z-index: 20;
+}
+@keyframes header-movein{
+    from{
+        transform: translateY(-100%);
+        opacity: 0.4;
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.head-logo{
+    width: 120px;
+    mix-blend-mode: color-burn;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
+}
+.head-logo:hover{
+    opacity: 1;
+}
+nav ul{
+    padding: 0;
+    gap: 5px;
+    margin-right: 5px;
+}
+nav ul li{
+    list-style-type: none;
+    margin: 5px;
+    overflow: hidden;
+}
+.header-a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 900;
+    transition: color 0.3s ease , font-size 0.5s ease, transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+.header-a::after{
+    content: '';
+    width: 100%;
+    height: 50px;
+    background-color: red;
+}
+.header-a:hover{
+    color:teal;
+    text-shadow: 0px 0px 1px rgb(255, 255, 255);
+    font-size: 1.2rem;
+    transform: scaleX(1.2);
+    font-weight: bolder;
+}
+#menuopts-box{
+    display: none;
+    cursor: pointer;
+}
+
+main{
+    min-height: 85vh;
+    padding-bottom: 10vh;
+}
+main >*{
+    width: 100%;
+    z-index: 50;
+}
+.main-home{
+    width: 100vw;
+    height: 90vh;
+    background-image: url("media/naturetreesmount.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 18;
+}
+.main-home-contentbox{
+    position: absolute;
+    display: grid;
+    place-content: center;
+    width: 100vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.main-heading{
+    font-size: 6rem;
+    max-width: 600px;
+    font-family: "Anta", sans-serif;
+    font-weight: 900;
+    color: transparent;
+    background-clip: text;
+    background-color: black;
+    background-image: linear-gradient(90deg,rgb(0 41 58), #156a6c);
+    animation: slideup 1.2s ease-in-out 0s 1 forwards;
+}
+.main-para{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.7rem;
+    text-shadow: 1px 1px 1px lightsteelblue;
+    color: rgba(245, 245, 245, 0.538);
+    transform:translateX(-100vw);
+    animation: slideup 1.5s ease-in-out 0.5s 1 forwards;
+}
+@keyframes slideup{
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.main-welcome{
+    width: 95%;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px;
+}
+.sub-heading{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.welcome-para{
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-indent: 2rem;
+    line-height: 1.5rem;
+    padding: 20px 10px;
+    margin-top: 10px;
+    font-weight: 300;
+    border-radius: 20px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: rgba(173, 216, 230, 0.68);
+}
+.home-grid-imgsbox {
+    width: 98vw;
+    height: 300px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.home-grid-imgsbox div img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    padding: 5px;
+}
+.home-video{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.aboutus-header{
+    background-color: transparent;
+    z-index: 26;
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    background-image: linear-gradient(90deg,transparent 40%,rgb(255, 255, 255)70%);
+}
+.aboutus-section{
+    background-color: lightblue;
+    width: 100vw;
+    position: relative;
+}
+.aboutus-left{
+    width: 40vw;
+    background-color: rgba(0, 0, 0, 0.62);
+    background-image: url('media/natureTrees.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+
+    height: 150vh;
+    position: fixed;
+    left: 0;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    overflow-y: hidden;
+    animation: zoomwbg 1.3s ease 0s 1 forwards;
+}
+.aboutus-left h2{
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    font-size: 2rem;
+    margin-top: -10vh;
+}
+@keyframes zoomwbg{
+    0%{
+        width: 0px;
+        opacity: 0;
+    }
+    100%{
+        width: 40%;
+        opacity: 1;
+    }
+}
+.aboutus-right{
+    width: 60%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 10px;
+    height: 100vh;
+    position: absolute;
+    background-image: url('media/aboutus-bg.jpg');
+    background-origin: content-box;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    right: 0;
+    top: 0;
+    text-indent: 2em;
+    font-size: 1.2rem;
+    z-index: 1;
+    line-height: 1.5em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    animation: zoomin 1.5s ease 0s 1 forwards;
+}
+@keyframes zoomin{
+    0%{
+        width: 0px;
+        opacity: 0;
+    }
+    100%{
+        width: 60%;
+        opacity: 1;
+    }
+}
+.aboutus-blurbg{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 23;
+}
+.aboutus-right p{
+    color: transparent;
+    background-color: transparent;
+    background-clip: text;
+    background-image:linear-gradient(180deg, rgb(103, 162, 211), lightblue);
+    padding: 5px 0px;
+    font-size: 1.4rem;
+}
+.aboutus-right-box {
+    width: 90%;
+    display: grid;
+    place-content: center;
+    padding: 2vmin 1vmin;
+    margin: 2px;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    z-index: 25;
+}
+.aboutus-right-box ul {
+    padding: 20px;
+    margin: 10px 0px;
+    border-radius: 20px;
+}
+.aboutus-right-box ul li{
+    list-style-type: disc;
+    color: rgb(194, 194, 194);
+    text-indent: 0px;
+    margin-left: 5%;
+}
+
+/* our-tourism */
+.ourtourism-main{
+    background-image: url('media/templeBG2.jpg');
+    background-color: lightblue;
+}
+.ourtourism-main h2{
+    font-size: 1.6rem;
+    padding: 20px;
+}
+.ourtourism-section{
+    text-align: center;
+    padding: 10px 5px;
+    background-color: rgba(128, 128, 128, 0.268);
+    box-shadow: 1px 1px 2px black;
+}
+.tourism-intro{
+    font-size: 1.4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 4px black;
+}
+.ourTourisms-imgbox{
+    background-color: lightblue;
+    padding: 5px;
+    margin: 15px;
+}
+.ourTourisms-imgbox{
+    height: 400px;
+    width: 300px;
+    background-image: url('media/spititual\ tour.jpg');
+    background-size: cover;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0px;
+    border-radius: 20px 0px 20px 0px;
+    position: relative;
+    transition: transform 0.6s ease-in-out 0s ;
+    overflow: hidden;
+    animation: zoomoutimg 1.2s ease-out 0s 1 forwards;
+}
+@keyframes zoomoutimg{
+    from{
+        transform: scale(1.4);
+        opacity: 0;
+    }to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.ourTourisms-imgbox:hover{
+    transform: scale(1.02);
+    >p{
+        bottom: 0;
+    }
+    >div >p{
+        top:10px;
+    }
+}
+.ot-blur-bg{
+    background-color: rgba(0, 0, 0, 0.466);
+    width: 100%;
+    height: 100%;
+    position:relative;
+    top: 0;
+    left: 0;
+    transition: background-color 0.6s ease 0s;
+}
+.ot-blur-bg:hover{
+    background-color: transparent;
+}
+.ourTourism-img-title{
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 10px black;
+}
+.ourTourism-content{
+    position: absolute;
+    bottom: -100;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    transition: bottom 2s ease-in 0s;
+}
+.oti-2{
+    background-image: url('media/adiyogi.jpg');
+}
+.oti-3{
+    background-image: url('media/cdy-gangotri.jpeg');
+    background-position: bottom;
+}
+.oti-4{
+    background-image: url('media/jonathan-lampel-8gUG6pO_bac-unsplash\ \(1\).jpg');
+}
+.oti-5{
+    background-image: url('media/raimond-klavins-V1yD4Uq_Y3g-unsplash.jpg');
+}
+.oti-6{
+    background-image: url('media/vaishno-devi-5191240_640.jpg');
+}
+.oti-7{
+    background-image: url('media/rishikesh.jpg');
+}
+.oti-8{
+    background-image: url('media/golden-3141099_640.jpg');
+}
+.oti-9{
+    background-image: url('media/hemkund\ sahid.jpeg');
+}
+
+/* Resources */
+.resources-main{
+    background-color: lightblue;
+}
+.resources-main >h2, .sub-heading{
+    margin: 5px;
+    padding: 10px 2px;
+    text-decoration: 5px underline teal;
+}
+.resources-section{
+    text-align: center;
+    padding: 5px;
+}
+.resources-para{
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.resources-box{
+    margin: auto;
+    max-width:1000px;
+    justify-content: space-evenly;
+    row-gap: 10px;
+}
+.resourceBox{
+    width:100%;
+    max-height: 500px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    overflow: hidden;
+    border-radius: 0% 50% 0% 0%;
+    background-image: linear-gradient(90deg,lightblue,white);
+}
+.resource-img{
+    width: 50%;
+}
+.resource-img >img{
+    object-fit: cover;
+    width: 100%;
+    animation: opacityy 2s ease 0s 1 forwards;
+}
+@keyframes opacityy {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+.resource-right{
+    width: 50%;
+    overflow: hidden;
+    margin-top: -5%;
+}
+.resource-right-title{
+    font-size: 1.4rem;
+    width: 30%;
+    margin: auto;
+    border-bottom: 2px solid black;
+}
+.resource-right p{
+    padding: 10px;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 3px white;
+}
+.flex-right{
+    border-radius: 0% 0% 0% 50%;
+    flex-direction: row-reverse;
+    background-image: linear-gradient(90deg,white,lightblue);
+}
+.flex-left .resource-right{
+    animation: textslideleft 1s ease forwards 1 0s;
+}
+.flex-right .resource-right{
+    animation: textslideright 1s ease forwards 1 0s;
+}
+@keyframes textslideright{
+    from{
+        transform: translateX(-5%);
+        opacity: 0;
+        display: none;
+    }
+    to{
+        opacity: 1;
+        display: block;
+        transform: translateX(0);
+    }
+}
+@keyframes textslideleft{
+    from{
+        transform: translateX(5%);
+        opacity: 0;
+        display: none;
+    }
+    to{
+        opacity: 1;
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+/* UpComing */
+.upcoming-main{
+    background-color: lightblue;
+    padding: 5px;
+    overflow: hidden;
+}
+.upcoming-section {
+    text-align: center;
+    background-color: #156a6c;
+    border-radius: 20px;
+    padding-block: 20px;
+    margin: 20px auto;
+    width: calc(100% - 30px);
+}
+.upcoming-section p{
+    font-size: 1.3rem;
+}
+
+
+
+/* footer footer footer footer */
+footer{
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    min-height: 4vh;
+    text-align: center;
+    color: lightblue;
+    background-color: rgb(32, 55, 79);
+    display: grid;
+    padding: 5px;
+    place-content: center;
+}
+footer a{
+    color: steelblue;
+    font-weight: 800;
+}
+/* MEDIA QUERIES */
+/* MEDIA QUERIES */
+/* MEDIA QUERIES */
+/* Mobile */
+@media screen and (max-width:767px) {
+    #menuopts-box{
+        display: block;
+        position: absolute;
+        top: 10vh;left: 0;right: 0;bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        margin: auto;
+        background-color: aquamarine;
+        z-index: 500;
+    }
+    #menu-btn{
+        width: 50px;
+        position: fixed;
+        right: 0;
+        z-index: 999;
+    }
+    #menu-opts-box{
+        display: grid;
+        place-content: center;
+        width: max-content;
+        margin: 1rem auto;
+        height: max-content;
+    }
+    #menu-opts-box ul{
+        width: max-content;
+        padding: 0;
+        margin: auto;
+    }
+    #menu-opts-box ul li{
+        padding: 10px;
+        width: auto;
+    }
+    #menu-opts-box ul li a{
+        color: black;
+        text-shadow: 1px 1px 5px white;
+        padding: 5px;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+    nav{
+        display: none;
+    }
+    
+}
+/* TABLET */
+@media screen and  (min-width:768px) and (max-width:1023px) {
+   
+}
+
+/* DESKTOP */
+@media screen and (max-width:1024px) {
+    
+    
+}
